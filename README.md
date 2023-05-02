@@ -17,12 +17,17 @@ Le Convertisseur de devises en temps réel est une application Web qui utilise u
 
 ## Technologies utilisées
 
-ReactJS - Typescript
-API de conversion de devises tierce
+- ReactJS
+- Typescript
+- API de conversion de devises tierce
 
-## Instructions
+## Utilisation
 
 - Cloner ce dépôt Github
 - Installer les dépendances à l'aide de la commande npm install
 - Lancer l'application en utilisant la commande npm start
 - Sélectionner la devise de destination, ainsi que le montant à convertir
+
+## Démonstration
+
+![giphy](./public/giphy.gif)

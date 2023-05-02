@@ -1,0 +1,11 @@
+@use '../../styles/variables' as v;
+
+.converter {
+  background: v.$color-light;
+  color: v.$color;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  max-width: 480px;
+  width: 90vw;
+}

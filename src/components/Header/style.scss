@@ -1,0 +1,32 @@
+@use '../../styles/variables' as v;
+
+.header {
+  background: v.$color;
+  color: v.$color-light;
+  padding: v.$gutter * 1.5;
+  text-align: center;
+
+  &-title {
+    // .header-title
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  &-amount {
+    // .header-amount
+    &__input {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid v.$color-light;
+      color: v.$color-light;
+      display: inline-block;
+      margin-right: 1.6rem;
+      width: 4.8rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@use 'sass:math';
+@use '../../styles/variables' as v;
+
+$toggler-width: 4.8rem;
+$toggler-width-semi: calc($toggler-width / 2);
+$toggler-width-mini: calc($toggler-width / 20);
+
+// @debug "toggler-width-mini >>> #{$toggler-width-mini}";
+
+.header {
+  position: relative;
+}
+
+.toggler {
+  align-items: center;
+  background: v.$color-alt;
+  border: 3px solid v.$color-light;
+  border-radius: 50%;
+  bottom: -$toggler-width-semi;
+  color: v.$color;
+  display: flex;
+  font-size: $toggler-width-semi;
+  height: $toggler-width;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: $toggler-width;
+
+  &-btn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      background: v.$color-light;
+      border-radius: $toggler-width-mini;
+      display: block;
+      height: $toggler-width-mini;
+      position: relative;
+      transition: all 0.3s;
+      width: $toggler-width-semi;
+
+      &:nth-child(1) {
+        animation: ease 0.7s top forwards;
+      }
+
+      &:nth-child(2) {
+        animation: ease 0.7s scaled forwards;
+      }
+
+      &:nth-child(3) {
+        animation: ease 0.7s bottom forwards;
+      }
+    }
+
+    span + span {
+      margin-top: $toggler-width-mini * 2;
+    }
+
+    &--open {
+      span {
+        &:nth-child(1) {
+          animation: ease 0.7s top-close forwards;
+        }
+
+        &:nth-child(2) {
+          animation: ease 0.7s scaled-close forwards;
+        }
+
+        &:nth-child(3) {
+          animation: ease 0.7s bottom-close forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes top {
+  0% {
+    top: 0.72rem;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 0.72rem;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    bottom: 0.72rem;
+    transform: rotate(-45deg);
+  }
+  50% {
+    bottom: 0.72rem;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes scaled {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes top-close {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 0.72rem;
+    transform: rotate(0);
+  }
+  100% {
+    top: 0.72rem;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes bottom-close {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    bottom: 0.72rem;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0.72rem;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes scaled-close {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

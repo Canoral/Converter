@@ -1,0 +1,35 @@
+@use 'reset';
+@use 'fonts';
+@use 'variables' as v;
+
+html,
+body {
+  height: 100vh;
+}
+
+html {
+  font-size: 62.5%; // 10px par défault
+}
+
+body {
+  font-family: v.$font-sans;
+  font-size: 1.6rem; // par défaut, 16px
+}
+
+#root {
+  /*
+    on fixe la hauteur à 100vh
+    on supprime les barres de défilement
+    on se sert de `display: flex`
+      pour centrer horizontalement et verticalement les enfants
+  */
+  align-items: center;
+  background: v.$color-alt;
+  color: v.$color-light;
+  display: flex;
+  font-family: v.$font-sans;
+  font-weight: 300;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}

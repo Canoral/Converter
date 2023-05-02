@@ -1,0 +1,18 @@
+@use 'sass:color';
+
+$color: #5e024e;
+// on peut utiliser un module natif de Sass pour « calculer »
+// des nouvelles couleurs : `sass:color`
+// astuce : avec ce principe, on peut totalement modifier le thème
+// de la page en ne modifiant qu'une seule couleur
+// https://sass-lang.com/documentation/modules/color
+$color-alt: color.scale($color, $lightness: 90%);
+$color-light: #fff;
+
+$font-sans: 'League Spartan', Arial, Helvetica, sans-serif;
+
+$list-item-height: 3.2rem;
+$gutter: 2.4rem; // hauteur de ligne → 24px (16 * 1.5)
+
+$delay-fast: 0.2s;
+$delay-slow: 1s;
